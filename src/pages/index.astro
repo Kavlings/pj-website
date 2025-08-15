@@ -1,11 +1,101 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="PJ Marketing Solutions">
+    <Navigation />
+
+
+
+<section>
+<h1> 
+    Precise Reach. Real Growth.
+</h1>
+
+</section>
+<section>
+<p>
+    We deliver data-driven marketing strategies that transform your brand presence and drive measurable results for your business.
+</p>
+</section>
+
+<section class = "side-by-side">
+    <h2>
+        1000+ projects completed
+    </h2>
+
+    <h2>
+        Consistent results since 2014.
+    </h2>
+    
+</section>
+
+<section>
+    <h2>
+        Our Services
+    </h2>
+</section>
+
+<section class="client-logos">
+    <h2>Trusted by Leading Brands</h2>
+    <div class="logo-carousel">
+        <div class="logo-track ">
+            <!-- First set of logos -->
+             <img class="client-logo" src="/logos/dwtc.png" alt="Dubai World Trade Centre">
+             
+        </div>
+    </div>
+</section>
+
+    <Footer slot="footer" />
 </Layout>
+
+<style>
+    section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h1 {
+        font-size: 4rem;
+        font-weight: bold;
+        color: #333;
+    }
+
+    p {
+        font-size: 1.5rem;
+        color: #333;
+    }
+    .side-by-side {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        padding: 2rem 0;
+    }
+
+    .side-by-side h2 {
+        flex: 1;
+        text-align: center;
+        margin: 0;
+    }
+
+    .client-logo {
+        width: 300px;
+        height: auto;
+        object-fit: contain;
+    }
+    .client-logos {
+        display: flex;
+        flex-direction: column;
+    }
+</style>
+
+
+
+
+
+
