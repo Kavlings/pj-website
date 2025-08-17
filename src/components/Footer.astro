@@ -2,19 +2,29 @@
 
 ---
 <div class="footer">
-<a href="/">Home</a>
-<a href="/about">About</a>
-<a href="/services">Services</a>
-<a href="/contact">Contact Us</a>
+    <div class="footer-column">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+
+    </div>
+    <div class="footer-column">
+        <a href="/services">Services</a>
+        <a href="/contact">Contact Us</a>
+        
+    </div>
+
 </div>
 <style>
     .footer {
         display: flex;
+        /* stack vertically on mobile */
+        flex-direction: column; 
         justify-content: center;
         align-items: center;
-        background-color: black;
+        background-color: darkblue;
         color: white;
         padding: 1rem;
+        gap: 0.5rem;
     }
 
     a {
@@ -22,13 +32,26 @@
         padding: 1rem;
         text-decoration: none;
         border-radius:4px;
-        margin-right: 1rem;
+        margin-right: 0;
         transition: background-color 0.3s ease;
-        font-size: 1.5rem;
+        font-size: 1rem;
         color: white;
     }
 
     a:hover {
         background-color: rgba(255, 255, 255, 0.1);
+    }
+    @media (min-width 768px) {
+        .footer {
+            /* Back to horizontal on larger screens */
+            flex-direction: row; 
+            /* Better spacing on larger screens */
+            gap: 2rem;
+        }
+        a {
+            /* reduce margin since we're using gap */
+            margin-right: 0;
+        }
+        
     }
 </style>
