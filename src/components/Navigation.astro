@@ -1,9 +1,14 @@
 ---
 
 ---
-<nav>
+<nav class="site-nav">
     <h1>PJ Marketing Solutions</h1>
-    <div class="nav-links">
+    <button class="hamburger" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
+        <span></span>
+        <span></span>
+    </button>
+
+    <div id="nav-links" class="nav-links">
         <a href="/">Services</a>
         <a href="/about">About</a>
         <a href="/services">Testimonials</a>
@@ -11,30 +16,45 @@
     </div>
 </nav>
 
+<script type="module">
+    const button = document.querySelector('hamburger');
+    const links = document.getElementById('nav-links');
+
+    button?.addEventListener('click', () => {
+        const expanded = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', String(!expanded));
+        links.classList.toggle('open')
+    });
+
+</script>
+
 <style>
-    nav {
+    
+    .site-nav {
         background-color: darkblue;
         padding: 1rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
+
     
     nav h1 {
         margin: 0;
         color: white;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
-    
+    /* hide links on mobile */
     .nav-links {
-        display: flex;
-        gap: 1rem;
+        display: none;
+        flex-direction: column;
+        gap: 0.75rem;
     }
     
-    nav a {
+    .nav-links a {
         color: white;
         text-decoration: none;
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 0.5rem;
         border-radius: 4px;
         transition: background-color 0.3s ease;
     }
@@ -42,9 +62,49 @@
     nav a:hover {
         background-color: rgba(255, 255, 255, 0.1);
     }
-    @media (min-width 768px) {
-        nav { flex-direction:  row;}
-        .nav-links {flex-direction: row;}
-        
+
+    .hamburger {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 6px;
+        width: 36px;
+        height: 36px;
+        background: transparent;
+        border: 0;
+        cursor: pointer;
     }
+
+    .hamburger span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: white;
+        border-radius: 1px;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    /* Tablet and up */
+    @media (min-width: 768px) {
+        .nav-links {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+        }
+        .hamburger {
+            display: none;
+        }
+
+
+    }
+        /* Desktop and up */
+    @media (min-width 1024px) {
+        nav h1 {
+            font-size: 1.5;
+        }
+    }
+
 </style>
