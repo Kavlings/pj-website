@@ -4,21 +4,30 @@ import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="PJ Marketing Solutions">
+<Layout title="PJ Marketing Solutions - Helping Business Grow">
     <Navigation />
 
 
 
-<section>
-<h1> 
-    Precise Reach. <br>
-    Real Growth.
-</h1>
+<section class="hero">
+    <video class="hero-video" autoplay muted loop playsinline preload="metadata">
+        <source src="/hero.mp4" type="video/mp4">
+        Your browser does not support the video tag
+    </video>
+
+    <div class="hero-overlay">
+        <h1> 
+            Precise Reach. <br>
+            Real Growth.
+        </h1>
+        <p>
+            We deliver data-driven marketing strategies that transform your brand presence and drive measurable results for your business.
+        </p>
+    </div>
+
 </section>
 <section>
-<p>
-    We deliver data-driven marketing strategies that transform your brand presence and drive measurable results for your business.
-</p>
+
 </section>
 
 <section class = "side-by-side">
@@ -53,24 +62,56 @@ import Footer from '../components/Footer.astro';
 </Layout>
 
 <style>
-    section {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+
+    .hero {
+        display: block;
+        position: relative;
+        min-height: 80vh;
+        width: 100%;
+        overflow: hidden;
     }
 
-    h1 {
-        font-size: 4rem;
+    .hero-video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.35);
+    }
+
+    .hero-overlay {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        place-items: center;
+        gap: 1rem;
+        text-align: center;
+        padding: 6rem 2rem;
+        color: #fff;
+    }
+
+    .hero-overlay h1 {
+        font-size: 3rem;
         font-weight: bold;
-        color: #333;
-        text-align: center;
+        margin: 0;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
     }
 
-    p {
-        font-size: 1.5rem;
-        color: #333;
-        text-align: center;
+    .hero-overlay p {
+        font-size: 1.25rem;
+        max-width: 60ch;
+        margin: 0 auto;
+        text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
     }
+
+
     .side-by-side {
         display: flex;
         justify-content: space-between;
