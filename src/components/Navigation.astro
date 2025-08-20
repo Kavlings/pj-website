@@ -31,10 +31,13 @@
 <style>
 
     nav {
-        position: sticky;
+        position: fixed;
+        top: var(--nav-top);
+        left: 0;
+        right: 0;
         top: 15px;
         z-index: 1000;
-        background: darkblue;
+        background: transparent;
     }
     
     .site-nav {
@@ -43,6 +46,11 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        width: min(92%,900px);
+        margin-inline: auto;
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     
@@ -51,6 +59,7 @@
         color: white;
         font-size: 1rem;
     }
+    
     /* hide links on mobile */
     .nav-links {
         display: none;
@@ -104,13 +113,12 @@
         .hamburger {
             display: none;
         }
-
-
     }
+
         /* Desktop and up */
-    @media (min-width 1024px) {
+    @media (min-width: 1024px) {
         nav h1 {
-            font-size: 1.5;
+            font-size: 1.5rem;
         }
     }
 
