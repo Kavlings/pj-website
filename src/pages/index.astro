@@ -39,23 +39,25 @@ import Footer from '../components/Footer.astro';
     
 </section>
 
+
+
+<section class="client-logos">
+    <h2>Trusted Partnerships</h2>
+        <div class="logo-track ">
+            <!-- First set of logos -->
+             <img class="client-logo" src="/logos/dwtc.png" alt="Dubai World Trade Centre">
+             <img class="client-logo" src="/logos/meorient.png" alt="ME Orient">
+             <img class="client-logo" src="/logos/gl-exhibitions.png" alt="GL Exhibitions">
+             <img class="client-logo" src="/logos/tahaluf.png" alt="Tahaluf">
+             <img class="client-logo" src="/logos/messe-frankfurt.jpg" alt="Tahaluf">
+    </div>
+</section>
+
 <section class="services">
     <h2>
         Our Services
     </h2>
 </section>
-
-<section class="client-logos">
-    <h2>Trusted Partnerships</h2>
-    <div class="logo-carousel">
-        <div class="logo-track ">
-            <!-- First set of logos -->
-             <img class="client-logo" src="/logos/dwtc.png" alt="Dubai World Trade Centre">
-             
-        </div>
-    </div>
-</section>
-
     <Footer slot="footer" />
 </Layout>
 
@@ -138,17 +140,30 @@ import Footer from '../components/Footer.astro';
     }
 
     .client-logo {
-        width: 300px;
-        height: auto;
+        width: 200px;
+        height: 200px;
         object-fit: contain;
     }
     .client-logos {
         display: flex;
         flex-direction: column;
         align-items: center;
+        gap: 2rem;
+
     }
     .client-logos h2 {
-        color: red;
+        
+    }
+    .logo-track {
+        display: flex;
+        gap: 5rem;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .services {
+        margin-top: 5rem;
     }
 </style>
 
