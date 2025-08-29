@@ -6,7 +6,7 @@ import Footer from '../components/Footer.astro';
 
 <Layout title="PJ Marketing Solutions - Helping Business Grow">
     <section class="hero">
-    <Navigation />
+    <Navigation />  
     <video class="hero-video" autoplay muted loop playsinline preload="metadata">
         <source src="/hero.mp4" type="video/mp4">
         Your browser does not support the video tag
@@ -30,11 +30,11 @@ import Footer from '../components/Footer.astro';
 
 <section class = "side-by-side">
     <h2>
-        [Impressive Fact]
+        Trusted Partner Since 2014
     </h2>
 
     <h2>
-        [Impressive Fact 2]
+        Over 1000 Projects Completed
     </h2>
     
 </section>
@@ -42,14 +42,16 @@ import Footer from '../components/Footer.astro';
 
 
 <section class="client-logos">
-    <h2>Trusted Partnerships</h2>
+    <!-- <h2>Trusted Partnerships</h2> -->
         <div class="logo-track ">
             <!-- First set of logos -->
              <img class="client-logo" src="/logos/dwtc.png" alt="Dubai World Trade Centre">
-             <img class="client-logo" src="/logos/meorient.png" alt="ME Orient">
-             <img class="client-logo" src="/logos/gl-exhibitions.png" alt="GL Exhibitions">
+             <img class="client-logo" src="/logos/informa-middle-east.png" alt="Tahaluf">
              <img class="client-logo" src="/logos/tahaluf.png" alt="Tahaluf">
              <img class="client-logo" src="/logos/messe-frankfurt.jpg" alt="Tahaluf">
+             <img class="client-logo" src="/logos/meorient.png" alt="ME Orient">
+             <img class="client-logo" src="/logos/gl-exhibitions.png" alt="GL Exhibitions">
+
     </div>
 </section>
 
@@ -130,7 +132,7 @@ import Footer from '../components/Footer.astro';
         align-items: center;
         gap: 1rem;
         padding: 2rem 0;
-        /* min-height: 50vh; */
+        min-height: 25vh;
     }
 
     .side-by-side h2 {
@@ -140,31 +142,58 @@ import Footer from '../components/Footer.astro';
     }
 
     .client-logo {
-        width: 200px;
-        height: 200px;
+        width: 140px;
+        height: 80px;
         object-fit: contain;
+        display: block;
+        justify-self: center;
     }
     .client-logos {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
+        padding: 0;
 
     }
     .client-logos h2 {
         
     }
-    .logo-track {
-        display: flex;
-        gap: 5rem;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
+    .logo-track  {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px,1fr));
+        gap: 1rem;
+
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        
     }
 
     .services {
         margin-top: 5rem;
     }
+
+/* Tabletss */
+@media (min-width: 768px) {
+    .logo-track {
+        grid-template-columns: repeat(3,minmax(0,1fr));
+        gap: 1rem;
+    }
+
+/* Desktops */
+@media (min-width:1024px) {
+    .logo-track {
+        grid-template-columns: repeat(6, minmax(0,fr));
+        gap: 2rem;
+        object-fit: contain;
+    }   
+
+    .client-logo {
+        width: 350px;
+        height: 140px;
+        object-fit: contain; /* keep logos undistorted inside the fixed box */
+        justify-self: center;
+        display: block;
+    }
+}
+}
 </style>
 
 
