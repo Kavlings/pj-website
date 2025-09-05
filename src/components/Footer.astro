@@ -2,18 +2,21 @@
 
 ---
 <div class="footer">
-    <div class="footer-column">
-        <h3>Company Info</h3>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-
+    <div class="footer-content">
+        <div class="footer-column">
+            <h3>Company</h3>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/services">Services</a>
+        </div>
+        <div class="footer-column">
+            <h3>Connect</h3>
+            <a href="/contact">Contact Us</a>
+        </div>
     </div>
-    <div class="footer-column">
-        <h3>Column 2</h3>
-        <a href="/services">Services</a>
-        <a href="/contact">Contact Us</a>
-    </div>
-
+        <div class="copyright">
+            <p> © 2014-2025 PJ Marketing Solutions FZ LLE </p>
+        </div>
 </div>
 <style>
 
@@ -24,7 +27,7 @@
         /* stack vertically on mobile */
         margin-inline: auto;
         margin-bottom: 15px;
-        flex-direction: row; 
+        flex-direction: column; 
         justify-content: space-around;
         background-color: darkblue;
         color: white;
@@ -32,6 +35,14 @@
         gap: 1rem;
         width: min(85%,900px);
         border-radius: 16px;
+        position: relative;
+    }
+
+    .footer-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 1rem;
     }
     .footer-column {
         display: flex;
@@ -43,19 +54,20 @@
         /* remove default browser settings */
         margin: 0;
         /* Make headers smaller than main test */
-        font-size: 1.2rem;
+        font-size: 1rem;
+        font-weight: 400;
         /* Add space below the header */
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.1rem;
     }
-
+    
 
     a {
-        padding: 1rem;
+        padding: rem;
         text-decoration: none;
         border-radius:4px;
         margin-right: 0;
         transition: background-color 0.3s ease;
-        font-size: 1rem;
+        font-size: 0.8rem;
         color: white;
     }
 
@@ -63,10 +75,8 @@
         background-color: rgba(255, 255, 255, 0.1);
     }
     @media (min-width 768px) {
-        .footer {
-            /* Back to horizontal on larger screens */
-            flex-direction: row; 
-            /* Better spacing on larger screens */
+
+        .footer-content {
             gap: 2rem;
         }
         a {
@@ -75,4 +85,13 @@
         }
         
     }
+
+    .copyright{
+        position: absolute;
+        font-size: 8px;
+        bottom: 1px;
+        right: 0.5rem;
+        margin: 0;
+    }
+
 </style>

@@ -123,6 +123,7 @@ import Footer from '../components/Footer.astro';
     }
     .services h2 {
         margin: 0;
+        font-weight: 400;
     }
 
 
@@ -136,9 +137,11 @@ import Footer from '../components/Footer.astro';
     }
 
     .side-by-side h2 {
-        flex: 1;
+        flex: 2;
         text-align: center;
-        margin: 0;
+        margin: 9px;
+        font-size: 1.5rem;
+        font-weight: 200;
     }
 
     .client-logo {
@@ -170,12 +173,23 @@ import Footer from '../components/Footer.astro';
         margin-top: 5rem;
     }
 
-/* Tabletss */
+/* Tablets and up */
 @media (min-width: 768px) {
     .logo-track {
         grid-template-columns: repeat(3,minmax(0,1fr));
         gap: 1rem;
+        
     }
+
+
+    
+
+    .hamburger {
+        display: none;
+    }
+
+    }
+
 
 /* Desktops */
 @media (min-width:1024px) {
@@ -191,9 +205,9 @@ import Footer from '../components/Footer.astro';
         object-fit: contain; /* keep logos undistorted inside the fixed box */
         justify-self: center;
         display: block;
-    }
+    }   
 }
-}
+
 </style>
 
 

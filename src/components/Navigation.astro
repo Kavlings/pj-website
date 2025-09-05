@@ -205,10 +205,28 @@
 
     /* Tablet and up */
     @media (min-width: 768px) {
+
         .nav-links {
-            display: flex;
-            flex-direction: row;
-            gap: 1rem;
+        position: static;
+        inset: auto;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: none;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+        background-color: transparent;
+    }
+
+        .nav-links a {
+        opacity: 1;
+        transform: translateY(0);
+        font-size: 1rem;
+        padding: 0.5rem 0.5rem;
+
+
         }
         .hamburger {
             display: none;
