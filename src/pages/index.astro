@@ -17,9 +17,7 @@ import Footer from '../components/Footer.astro';
             Precise Reach. <br>
             Real Growth.
         </h1>
-        <p>
-            Data-driven marketing strategies to drive measurable results for your event.
-        </p>
+
     </div>
 
     
@@ -27,6 +25,11 @@ import Footer from '../components/Footer.astro';
 <section>
 
 </section>
+<div class="tag-line">
+    <p>
+    Data-driven marketing strategies to drive measurable results for your event.
+</p>
+</div>
 
 <section class = "side-by-side">
     <h2>
@@ -36,7 +39,7 @@ import Footer from '../components/Footer.astro';
     <h2>
         Over 1000 Projects Completed
     </h2>
-    
+
 </section>
 
 
@@ -57,8 +60,9 @@ import Footer from '../components/Footer.astro';
 
 <section class="services">
     <h2>
-        Our Services
+        Capabilities
     </h2>
+
 </section>
     <Footer slot="footer" />
 </Layout>
@@ -95,13 +99,13 @@ import Footer from '../components/Footer.astro';
         place-items: center;
         gap: 1rem;
         text-align: center;
-        padding: 10rem 2rem;
+        padding: 13rem 2rem;
         color: #fff;
     }
 
     .hero-overlay h1 {
-        font-size: 3rem;
-        font-weight: bold;
+        font-size: 70px;
+        font-weight: 500;
         margin: 0;
         text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
     }
@@ -113,17 +117,36 @@ import Footer from '../components/Footer.astro';
         text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
     }
 
-    .services {
+    .tag-line {
         display: flex;
+        align-items: center;
+        justify-content: center;    
+    }
+    .tag-line p {
+        padding: 2rem 2.5rem;
+        font-size: 25px;
+        font-weight: 500;
+    }
+
+    .services {
+        margin-top: 5rem;
+        margin-bottom: 5rem;
         justify-content: center;
-        /* align-items: center; */
-        text-align: center;
+        align-items: center;
+        /* text-align: center; */
         min-height: 50vh;
         width: 100%;
+        background-image: url('/services-backdrop2.webp');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding: 2rem;
+        min-height: 400px;
     }
     .services h2 {
         margin: 0;
         font-weight: 400;
+        color: #fff;
     }
 
 
@@ -131,17 +154,18 @@ import Footer from '../components/Footer.astro';
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 1rem;
-        padding: 2rem 0;
-        min-height: 25vh;
+        /* gap: 1rem; */
+        padding: 1.5rem 0;
+        min-height: 20vh;
     }
 
     .side-by-side h2 {
         flex: 2;
         text-align: center;
         margin: 9px;
-        font-size: 1.5rem;
+        font-size: 2rem;
         font-weight: 200;
+        margin-top: 10px;
     }
 
     .client-logo {
@@ -171,6 +195,7 @@ import Footer from '../components/Footer.astro';
 
     .services {
         margin-top: 5rem;
+        
     }
 
 /* Tablets and up */
@@ -193,6 +218,12 @@ import Footer from '../components/Footer.astro';
 
 /* Desktops */
 @media (min-width:1024px) {
+
+    .tag-line p {
+        padding: 2rem 10rem;
+        font-size: 50px;
+        font-weight: 500;
+    }
     .logo-track {
         grid-template-columns: repeat(6, minmax(0,fr));
         gap: 2rem;
@@ -205,7 +236,8 @@ import Footer from '../components/Footer.astro';
         object-fit: contain; /* keep logos undistorted inside the fixed box */
         justify-self: center;
         display: block;
-    }   
+    } 
+
 }
 
 </style>
