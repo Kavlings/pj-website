@@ -2,8 +2,11 @@
 
 ---
 <nav class="site-nav">
-    <img class="nav-logo" src="/logos/minimal-pj-logo.jpg" alt="pj logo">
-    <h1>PJ Marketing Solutions</h1>
+    <div class="logo-group">
+        <img class="nav-logo" src="/logos/minimal-pj-logo.jpg" alt="pj logo">
+        <h1>PJ Marketing Solutions</h1>
+    </div>
+
     <button class="hamburger" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
         <span></span>
         <span></span>
@@ -83,18 +86,29 @@
 
     }
 
+    .logo-group {
+        display: flex;
+        align-items: center;
+        gap: 3px;
+    }
+
     
     nav h1 {
         margin: 0;
         color: black;
         font-size: 14px;
-        margin-left: 10px;
+
     }
 
     .nav-logo {
         width: 3rem;
         height: auto;
+        margin: 0;
+        margin-bottom: 6px;
+        margin-left: 4px;
+
     }
+
     
     /* hide links on mobile */
     .nav-links {
