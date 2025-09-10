@@ -1,0 +1,177 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro"
+---
+
+<Layout title="Services - PJ Marketing Solutions">    
+    <section class="page-hero">
+        <Navigation />
+        <div class="hero-overlay">
+            <h1> Services. </h1>
+            <p>Full-funnel event marketing to drive qualified attendance and ROI</p>
+        </div>
+
+    </section>
+
+    <section class="services-intro">
+        <h2> What we do. </h2>
+        <p> We combine precise targeting, data enrichment, and creative execution to help event organizers
+            acquire visitors, retain audience, and enable exhibitor success.
+        </p>
+    </section>
+
+    <section class="services-grid">
+        <article class="card"> 
+            <h3> Demand Generation </h3>
+            <p> End-to-end campaigns that move propects from awareness to registration.</p>
+            <ul>
+                <li>Persona-led messaging</li>
+                <li>Journey mapping</li>
+                <li>Multi-channel orchestration</li>
+            </ul>
+        </article>
+
+        <article class="card">
+            <h3> Visitor Acquisition </h3>
+            <p>Acquire high-intent attendees with laser-targeted outreach</p>
+            <ul>
+                <li> Lookalike audience builds</li>
+                <li> Geo & Industry targeting</li>
+                <li>Retargeting & win back</li>
+            </ul>
+        </article>
+
+        <article class="card">
+            <h3>E-mail Marketing & Automation</h3>
+            <p>Nurture sequences that convert interest into registrations</p>
+            <ul>
+                <li>Drip & trigger journeys</li>
+                <li>Lifecycle Segmentation</li>
+                <li>A/B Testing & deliverability</li>
+            </ul>
+        </article>
+        <article class="card">
+            <h3>Analytics & Reporting </h3>
+            <p>Decision-ready dashboards that tie activity to ROI.</p>
+            <ul>
+                <li>Source / medium attribution</li>
+                <li>Cohort & Funnel Reporting</li>
+                <li>Budget pacing & CAC</li>
+            </ul>
+        </article>
+
+        <section class="cta">
+            <h2>Ready to grow your next event?</h2>
+            <p>Lets build a plan tailored to your audience and targets. </p>
+            <a class="cta-button" href="/contact"> Talk to Us </a>
+        </section>
+    </section>
+
+    <Footer slot="footer" />
+
+
+</Layout>
+
+<style>
+    .page-hero {
+        position: relative;
+        min-height: 50vh;
+        width: 100%;
+        overflow: hidden;
+        background-image: url('/public/services-hero.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: grid;
+        place-items: center;
+    }
+
+    .page-hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-overlay {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        color: #fff;
+    }
+
+    .hero-overlay h1 {
+        font-weight: 500;
+    }
+
+    .services-intro {
+        width: min(85%,1000px);
+        margin-inline: auto;
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+    }
+
+    .services-intro p {
+        color: #333;
+    }
+
+    .services-grid {
+        width: 100%;
+        margin-inline: auto;
+        display: grid;
+        gap: 1rem;
+        padding: 1rem 0 2rem;
+    }
+    .card {
+        background: #fff;
+        border-radius: 14px;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+        padding: 1rem;
+        display: grid;          
+    }
+
+    .card h3 {
+        font-weight: 500;
+        margin:0;
+    }
+
+    .card p {
+        font-size: 1rem;
+    }
+
+    .card ul {
+        margin-left: 1rem;
+        color: #333;
+        font-size: 0.95rem;
+        display: grid;
+        gap: 0.25rem;
+    }
+
+    .cta {
+        width: min(85%, 900px);
+        margin-inline: auto;
+        text-align: center;
+        padding: 2rem 0 3rem;
+        display: grid;
+        gap: 0.75rem;        
+    }
+
+    .cta-button {
+        display: inline-block;
+        color: #fff;
+        background-color: #051C2A;
+        text-decoration: none;
+        padding: 0.9rem 1.2rem;
+        border-radius: 12px;
+        transition: filter 0.2s ease;
+        font-size: 1rem;
+    }
+
+    .cta-button:hover {
+        filter: brightness(1.5);
+    }
+
+
+</style>
