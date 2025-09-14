@@ -14,59 +14,129 @@ import Footer from "../components/Footer.astro"
 
     </section>
 
+
     <section class="services-intro">
         <h2> What we do. </h2>
-        <p> We combine precise targeting, data enrichment, and creative execution to help event organizers
-            acquire visitors, retain audience, and enable exhibitor success.
+        <p> We combine precise targeting, data enrichment, and creative execution to help event organizers acquire visitors, retain audience, and enable exhibitor success.
         </p>
     </section>
 
-    <section class="services-grid">
-        <article class="card"> 
-            <h3> Demand Generation </h3>
-            <p> End-to-end campaigns that move propects from awareness to registration.</p>
-            <ul>
-                <li>Persona-led messaging</li>
-                <li>Journey mapping</li>
-                <li>Multi-channel orchestration</li>
-            </ul>
-        </article>
 
-        <article class="card">
-            <h3> Visitor Acquisition </h3>
-            <p>Acquire high-intent attendees with laser-targeted outreach</p>
-            <ul>
-                <li> Lookalike audience builds</li>
-                <li> Geo & Industry targeting</li>
-                <li>Retargeting & win back</li>
-            </ul>
-        </article>
+    <div class="service-list">
 
-        <article class="card">
-            <h3>E-mail Marketing & Automation</h3>
-            <p>Nurture sequences that convert interest into registrations</p>
-            <ul>
-                <li>Drip & trigger journeys</li>
-                <li>Lifecycle Segmentation</li>
-                <li>A/B Testing & deliverability</li>
-            </ul>
-        </article>
-        <article class="card">
-            <h3>Analytics & Reporting </h3>
-            <p>Decision-ready dashboards that tie activity to ROI.</p>
-            <ul>
-                <li>Source / medium attribution</li>
-                <li>Cohort & Funnel Reporting</li>
-                <li>Budget pacing & CAC</li>
-            </ul>
-        </article>
+    <section class="service-split">
+        <div class="service-image">
+            <img src="/images/database.jpg" alt="Exhibitor enablement"/>
+    </div>
 
+        <div class="text">
+            <h3>Data Building/Enrichment</h3>
+            <p>Turn raw data into actionable insights</p>
+            <ul>
+                <li>Targeted prospect lists built to your specifications</li>
+                <li>Enriched profiles with firmographics, roles, and up-to-date contacts</li>
+                <li>-</li>
+            </ul>
+        </div>
+            
+
+
+    </section>
+
+    <section class="service-split">
+        <div class="service-image">
+            <img src="/images/telephone.png" alt="Exhibitor enablement"/>
+    </div>
+        <div class="text">
+            <h3>Televerification</h3>
+            <p>Reliable data you can trust. Validated by real conversations.</p>
+            <ul>
+                <li>Quick verification of contact details and decision-maker information</li>
+                <li>Confirmation of registrations, appointments, or opt-ins</li>
+                <li>Reduced bounce rates and wasted outreach with cleaner data</li>
+            </ul>
+        </div>
+            
+
+
+    </section>  
+
+    <section class="service-split">
+        <div class="service-image">
+            <img src="/images/email.png" alt="Exhibitor enablement"/>
+    </div>
+        <div class="text">
+            <h3>E-mail marketing</h3>
+            <p>Compelling campaigns that land, resonate, and covert.</p>
+            <ul>
+                <li>Strategy and copywriting tailored to your audience</li>
+                <li>Responsive templates optimised for all devices</li>
+                <li>Performance tracking with insights to boost engagement</li>
+            </ul>
+        </div>
+
+    </section> 
+    <section class="service-split">
+        <div class="service-image">
+            <img src="/images/telephone.png" alt="Exhibitor enablement"/>
+    </div>
+        <div class="text">
+            <h3> Telemarketing </h3>
+            <p>Engage prospects directly and drive meaningful conversations.</p>
+            <ul>
+                <li>Skilled agents representing your event with professionalism</li>
+                <li>Flexible campaigns for lead generation, follow-ups, or nurturing</li>
+                <li>Real-time reporting to refine strategy and measure results</li>
+            </ul>
+        </div>
+            
+
+
+    </section> 
+
+    <section class="service-split">
+
+        <div class="service-image">
+            <img src="/images/database.jpg" alt="Exhibitor enablement"/>
+    </div>
+
+        <div class="text">
+            <h3> Hosted Buyer </h3>
+            <p> Connecting qualified buyers with the right suppliers—seamlessly.</p>
+            <ul>
+                <li>Pre-qualified buyer matching to maximize ROI at your event.</li>
+                <li>Personalised schedules that align interests and availability</li>
+                <li>Dedicated support ensuring smooth, high-value meetings</li>
+            </ul>
+        </div>
+            
+
+    </section> 
+
+    <section class="service-split">
+
+        <div class="service-image">
+            <img src="/images/registration.png" alt="Exhibitor enablement"/>
+    </div>
+        <div class="text">
+            <h3> On-site Registration </h3>
+            <p> Fast, friction-free check-ins that set the tone for your event.</p>
+            <ul>
+                <li>Streamlined badge printing and attendee management</li>
+                <li>Trained staff to welcome and guide guests efficiently</li>
+                <li>Real-time attendance tracking for accurate post-event reporting</li>
+            </ul>
+        </div>
+            
+
+    </section> 
+
+</div>
         <section class="cta">
             <h2>Ready to grow your next event?</h2>
             <p>Lets build a plan tailored to your audience and targets. </p>
             <a class="cta-button" href="/contact"> Talk to Us </a>
         </section>
-    </section>
 
     <Footer slot="footer" />
 
@@ -79,7 +149,7 @@ import Footer from "../components/Footer.astro"
         min-height: 50vh;
         width: 100%;
         overflow: hidden;
-        background-image: url('/public/services-hero.jpg');
+        background-image: url('/services-hero.jpg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -116,38 +186,46 @@ import Footer from "../components/Footer.astro"
         color: #333;
     }
 
-    .services-grid {
+    .service-split {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "media"    
+        "text" ;
+        gap: 1.25rem;
+        align-items: center;
+        justify-items: center;
         width: 100%;
         margin-inline: auto;
-        display: grid;
-        gap: 1rem;
-        padding: 1rem 0 2rem;
+        padding: 1.5rem 0;
     }
-    .card {
-        background: #fff;
-        border-radius: 14px;
-        border: 1px solid rgba(0, 0, 0, 0.8);
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+
+    .service-split .text {
+        grid-area: text;
+        justify-self: center;
+        text-align: center;
+        display: grid;
         padding: 1rem;
-        display: grid;          
+    }
+    .service-split h3 {
+        font-size: 2.3rem;
+    }
+    .service-image {
+        grid-area: media;
+        justify-self: center;
+        max-width: 100%;
+        height: auto;
+        width: 340px;
     }
 
-    .card h3 {
-        font-weight: 500;
-        margin:0;
+    .service-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 14px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.06);
     }
 
-    .card p {
-        font-size: 1rem;
-    }
-
-    .card ul {
-        margin-left: 1rem;
-        color: #333;
-        font-size: 0.95rem;
-        display: grid;
-        gap: 0.25rem;
-    }
 
     .cta {
         width: min(85%, 900px);
@@ -173,5 +251,35 @@ import Footer from "../components/Footer.astro"
         filter: brightness(1.5);
     }
 
+    .text li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+    }
+
+    @media (min-width:768px) {
+        .service-split {
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            grid-template-areas: "text media";
+        }
+
+        .service-image {
+            justify-self: center;
+            width: 100%;
+        }
+
+        .service-list > .service-split:nth-child(even) {
+            grid-template-areas: "media text";
+        }
+
+        .service-list > .service-split:nth-child(even) .service-image {
+            justify-self: center;
+        }
+
+
+        
+    }
 
 </style>

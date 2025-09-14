@@ -3,8 +3,12 @@
 ---
 <nav class="site-nav">
     <div class="logo-group">
-        <img class="nav-logo" src="/logos/minimal-pj-logo.jpg" alt="pj logo">
-        <h1>PJ Marketing Solutions</h1>
+
+        <a href="/" class="logo-link">
+            <img class="nav-logo" src="/logos/minimal-pj-logo.jpg" alt="pj logo" >
+            <h1>PJ Marketing Solutions</h1> 
+        </a>
+
     </div>
 
     <button class="hamburger" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
@@ -92,6 +96,20 @@
         gap: 3px;
     }
 
+    .logo-link {
+        display: flex;
+        align-items: center;
+        gap: 3px;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .logo-link:hover {
+        text-decoration: none;
+        background-color: transparent;
+    }
+
+
     
     nav h1 {
         margin: 0;
@@ -167,7 +185,7 @@
     .nav-links.open a:nth-child(4) { transition-delay: 0.20s;}
     
     nav a:hover {
-        background-color: rgba(0, 0, 0, 0.06);
+        /* background-color: rgba(0, 0, 0, 0.06); */
     }
 
     .nav-links a.contact-button {
