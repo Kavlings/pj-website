@@ -17,7 +17,7 @@ import Footer from "../components/Footer.astro"
         <div class="contact-container">
             <div class="contact-info">
                 <h2>Contact Information</h2>
-                <div class="contact-item">
+                <div class="contactForm">
 
                     <div> 
                         <h3>Email</h3>
@@ -30,15 +30,15 @@ import Footer from "../components/Footer.astro"
             
             <div class="contact-form-container">
                 <h2>Send us a Message</h2>
-                <form class="contact-form" action="#" method="POST">
+                <form class="contact-form" id="contactForm">
                     <div class="form-group">
                         <label for="name">Your Name</label>
-                        <input type="text" id="name" name="name">
+                        <input type="text" id="name" name="name" minlength="2">
                     </div>
 
                     <div class="form-group">
                         <label for="email"> Email </label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="email" required >
                     </div>
                     
                     <div class="form-group">
@@ -49,15 +49,98 @@ import Footer from "../components/Footer.astro"
 
                     <div class="form-group">
                         <label for="message">Tell us a little bit about what you need</label>
-                        <textarea name="message" id="message" rows="5" required></textarea>
+                        <textarea name="message" id="message" rows="5" required minlength="10" ></textarea>
                     </div>
 
                     <button type="submit" class="submit-btn"> Send Message</button>
                 </form> 
             </div>
         </div>
+
+        <div id="form-message" class="form-message" role="status" aria-live="polite" aria-atomic="true" style="display: none;"></div>
     </section>
 
+
+
+<script>
+    const API_BASE_URL = 'http://localhost:8080'; //change to app engine when done
+
+    const showToast = (msgEl, {ok, message}) => {
+        msgEl.className = ok ? 'form-message success' : 'form-message error'
+        msgEl.innerHTML = ok
+        ? `<span class="title"> Message Sent </span><span class="meta">${message || 'Thank you! Your message has been sent successfully.'} </span>`
+        : `<span class="title"> Something went wrong</span><span class="meta">${message || 'Please try again.'}</span>`
+        msgEl.style.display = 'block'
+        //allow CSS transition
+        requestAnimationFrame(() => msgEl.classList.add('show'));
+        //auto hide
+        clearTimeout(msgEl._hideTimer);
+        msgEl._hideTimer = setTimeout(() => {
+            msgEl.classList.remove('show');
+            setTimeout(() => (msgEl.style.display = 'none'), 250);
+        }, 6000);
+    };
+
+
+    
+    const formEl = document.getElementById('contactForm');
+    if  (!(formEl instanceof HTMLFormElement)) {
+        console.warn('contactForm not found');
+        
+
+    } else {
+        const form = formEl;
+        form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+
+        const btn = form.querySelector('.submit-btn')
+        const msg = document.getElementById('form-message');
+        if (!btn || !msg) return;
+
+        const data = Object.fromEntries(new FormData(form));
+
+        btn.disabled = true; btn.textContent = 'Sending...'; 
+        msg.style.display = 'none'; 
+
+        try {
+            const res = await fetch(`${API_BASE_URL}/api/contact`, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(data)
+            });
+            let out = {};
+            try {
+                out = await res.json();
+            } catch {}
+
+            const extractError = (o) => {
+                if (o?.detail && Array.isArray(o.detail)) return o.detail.map(d => d.msg).join(', ');
+                return o?.message || 'Failed.';
+            };
+
+            if (res.ok) {
+                form.reset();
+                btn.textContent = 'Sent';
+                showToast(msg, { ok: true, message: extractError(out)});
+            } else {
+                showToast(msg, {ok: true, message: out.message });
+            }
+        } catch {
+            showToast(msg, {ok: false, message: 'Network error. Please try again.'});
+        } finally {
+            setTimeout(() => {
+                btn.disabled = false; btn.textContent = 'Send Message';
+            }, 1500);
+        }
+    });
+    }
+
+
+
+    
+    
+</script>
 
 
 
@@ -118,7 +201,7 @@ import Footer from "../components/Footer.astro"
         color: #163E93;
     }
 
-    .contact-item {
+    .contactForm {
         display: flex;
         align-items: center;
         gap: 1rem;
@@ -130,7 +213,7 @@ import Footer from "../components/Footer.astro"
         transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .contact-item:hover {
+    .contactForm:hover {
         transform: translateY(-2px);
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
     }
@@ -141,14 +224,14 @@ import Footer from "../components/Footer.astro"
         object-fit: contain;
     }
 
-    .contact-item h3 {
+    .contactForm h3 {
         font-size: 1.1rem;
         font-weight: 600;
         margin: 0 0 0.25rem 0;
         color: #163E93;
     }
 
-    .contact-item p {
+    .contactForm p {
         font-size: 1rem;
         margin: 0;
         color: #666;
@@ -215,6 +298,40 @@ import Footer from "../components/Footer.astro"
         transform: translateY(-1px);
     }
 
+    .form-message {
+        position: fixed;
+        right: 16px;
+        bottom: 16px;
+        max-width: 420px;
+        padding: 0.875rem 1rem;
+        border-radius: 10px;
+        background: #ffffff;
+        color: #222;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        border-left: 6px solid transparent;
+        z-index: 9999;
+        transform: translateY(12px);
+        opacity: 0;
+        transition: opacity .25s ease, transform .25s ease;
+    }
+
+    .form-message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+.form-message.success { border-left-color: #16a34a; }
+.form-message.error   { border-left-color: #dc2626; }
+.form-message .title {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 2px;
+}
+.form-message .meta {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+
 
 
     @media (max-width: 768px) {
@@ -259,7 +376,7 @@ import Footer from "../components/Footer.astro"
             font-size: 2rem;
         }
 
-        .contact-item {
+        .contactForm {
             padding: 1rem;
         }
         .contact-form-container {

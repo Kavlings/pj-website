@@ -1,8 +1,8 @@
 ---
-
+const year = new Date().getFullYear();
 ---
 <div class="footer">
-    <div class="footer-content">
+    <div class="footer-content" aria-label="Footer">
         <div class="footer-column">
             <h3>Company</h3>
             <a href="/">Home</a>
@@ -15,7 +15,7 @@
         </div>
     </div>
         <div class="copyright">
-            <p> © 2014-2025 PJ Marketing Solutions FZ LLE </p>
+            <p> © 2014-{year} PJ Marketing Solutions FZ LLE </p>
         </div>
 </div>
 <style>
@@ -30,17 +30,25 @@
         justify-content: space-around;
         background-color: #163E93;
         color: white;
-        padding: 5rem 1rem;
+        padding: 4rem 1rem;
         gap: 1rem;
         position: relative;
     }
 
     .footer-content {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-around;
         gap: 1rem;
     }
+
+    .footer-column ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+
     .footer-column {
         display: flex;
         flex-direction: column;
@@ -59,9 +67,9 @@
     
 
     a {
-        padding: rem;
+        padding: 0.5rem;
         text-decoration: none;
-        border-radius:4px;
+        border-radius: 4px;
         margin-right: 0;
         transition: background-color 0.3s ease;
         font-size: 0.8rem;
@@ -71,9 +79,15 @@
     a:hover {
         background-color: rgba(255, 255, 255, 0.1);
     }
-    @media (min-width 768px) {
+
+    a:focus-visible {
+        outline: 2px solid #fff;
+        outline-offset: 2px;
+    }
+    @media (min-width: 768px) {
 
         .footer-content {
+            flex-direction: row;
             gap: 2rem;
         }
         a {

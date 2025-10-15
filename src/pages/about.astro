@@ -1,0 +1,392 @@
+---
+import Layout from "../layouts/Layout.astro"
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro"
+---
+
+<Layout title="About Us - PJ Marketing Solutions">
+    <section class="page-hero">
+        <Navigation />
+        <div class="hero-overlay">
+            <h1>About Us</h1>
+            <p>Where Businesses Turn for Reliable Data</p>
+        </div>
+    </section>
+
+    <section class="about-intro">
+        <div class="container">
+            <h2>Who we are </h2>
+            <p>Founded in 2014 by a team with decades of hands-on experience in the exhibition industry, PJ Marketing Solutions was built to help exhibition companies unlock their full potential. We understand the challenges exhibitors face because we’ve lived them and that’s why we specialize in providing the data, insights, and strategies that drive real success. Today, we’re the trusted partner for companies looking to turn events into growth opportunities.</p>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>10+</h3>
+                    <p>Years of Experience</p>
+                </div>
+                <div class="stat-item">
+                    <h3>1000+</h3>
+                    <p>Projects Completed</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>Event Partners</p>
+                </div>
+                <div class="stat-item">
+                    <h3>75%</h3>
+                    <p>Clients remain engaged after 1 year</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mission-vision">
+        <div class="container">
+            <div class="mission-vision-grid">
+                <div class="mission">
+                    <h2>Our Mission</h2>
+                    <p>To empower event organizers with precise, data-driven marketing solutions that provide measurable growth and exceptional ROI. We believe in the power of targeted outreach, quality data, and creative execution to transform exhibitions into thriving business platforms.</p>
+                </div>   
+
+                <div class="vision">
+                    <h2>Our Vision</h2>
+                    <p>To be the leading exhibtion marketing partner in the Middle East</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="values-section">
+        <div class="container">
+            <h2>Our Values</h2>
+            <div class="values-grid">
+                <div class="value-item">
+                    <h3>Precision</h3>
+                    <p>We believe in targeted, data driven approaches</p>
+                </div>
+
+                <div class="value-item">
+                    <h3>Partnership</h3>
+                    <p>We work as an extension of your team, committed to your success as our own.</p>
+                </div>
+
+                <div class="value-item">
+                    <h3>Innovation</h3>
+                    <p>We continuously evolve out strategies</p>
+                </div>
+                <div class="value-item">
+                    <h3>Transparency</h3>
+                    <p>We provide clear reporting and honest communication</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section">
+        <div class="container">
+            <h2>Why Choose PJ Marketing?</h2>
+            <div class="team-features">
+                <div class="feature-item">
+                <h3>Specialized Expertise</h3>
+                <p>We focus exclusively on exhibition marketing, giving us deep industry knowledge</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Proven Track Record</h3>
+                    <p>Over 1000 successful projects with measurable results</p>
+                    </div>
+                <div class="feature-item">
+                    <h3>Data Driven Approach</h3>
+                    <p> - </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <section class="client-logos">
+        <div class="container">
+            <h2>Trusted by Leading Organizations</h2>
+            <div class="logo-track">
+                <img class="client-logo" src="/logos/dwtc.png" alt="Dubai World Trade Centre">
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>Ready to grow your next event?</h2>
+        <p>Let's build a plan tailored to your audience and targets. </p>
+        <a href="/contact" class="cta-button">Talk to Us</a>
+    </section>
+    <Footer slot="footer"/>
+</Layout>
+
+<style>
+
+    .page-hero {
+        position: relative;
+        min-height: 60vh;
+        width: 100%;
+        overflow: hidden;
+        background: linear-gradient(135deg, #163E93 0%, #1e4ba8 100%);
+        display: flex;
+        align-items: center;
+        color: white;
+        text-align: center;
+        padding-top: 80px;
+        justify-content: center;
+    }
+
+    .hero-overlay h1 {
+        font-size: 3rem;
+        font-weight: 300;
+        margin-bottom: 0.75rem;
+        line-height: 1.2;
+
+    }
+
+    .hero-overlay p {
+        font-size: 1.25rem;
+        font-weight: 300;
+        opacity: 0.9;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    .about-intro {
+        padding: 4rem 0;
+        background-color: #f8f9fa;
+    }
+
+    .about-intro h2 {
+        font-size: 2.5rem;
+        font-weight: 300;
+        margin-bottom: 2rem;
+        color: #163E93;
+        text-align: center;
+    }
+
+    .about-intro p {
+        font-size: 1.25rem;
+        line-height: 1.8;
+        color: #333;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    /* Stats Section */
+    .stats-section {
+        padding: 3rem 0;
+        background: #fff;
+    }
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2,minmax(0,1fr));
+        gap: 1rem;
+    }
+
+    .stat-item {
+        background: #f3f6fc;
+        border: 1px solid rgba(22, 62, 147, 0.08);
+        border-radius: 12px;
+        padding: 1.25rem;
+        text-align: center;
+    }
+
+    .stat-item p {
+        margin: 0;
+        font-size: 0.95rem;
+        color: #444;
+    }
+
+    /* Mission and Vision */
+    .mission-vision {
+        padding: 3rem 0;
+        background: #fff;
+    }
+
+    .mission-vision-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .mission, .vision {
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        border-radius: 12px;
+        padding: 1.5rem;
+    }
+
+    .mission h2, .vision h2 {
+        margin-bottom: 0.5rem;
+        color: #163E93;
+        font-weight: 500;
+    }
+
+    .values-section {
+        padding: 3rem 0;
+        background: #f8f9fa;
+    }
+
+    .values-section h2 {
+        text-align: center;
+        color: #163E93;
+        font-weight: 400;
+        margin-bottom: 1.5rem;
+    }
+
+    .values-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .value-item {
+        background: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        border-radius: 12px;
+        padding: 1.25rem;
+        text-align: left;
+    }
+
+    .value-item h3 {
+        margin-bottom: 0.25rem;
+        color: #163E93;
+        font-weight: 600;
+    }
+
+    /* Team features/ Why choose us */
+    .team-section {
+        padding: 3rem 0;
+        background: #fff;
+    }
+
+    .team-section h2 {
+        text-align: center;
+        color: #163E93;
+        font-weight: 400;
+        margin-bottom: 1.5rem;
+    }
+
+    .team-features {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .feature-item {
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        border-radius: 12px;
+        padding: 1.25rem;
+    }
+
+    .feature-item h3 {
+        margin-bottom: 0.25rem;
+        color: #163E93;
+        font-weight: 600;
+    }
+
+    /* Logos i guess for now */
+    .client-logos {
+        padding: 2.5rem 0;
+        background: #fff;
+    }
+
+    .client-logos h2 {
+        text-align: center;
+        color: #163E93;
+        font-weight: 400;
+        margin-bottom: 1.25rem;
+    }
+
+    .logo-track {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0,1fr));
+        gap: 1rem;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .client-logo {
+        width: 160px;
+        height: 90px;
+        object-fit: contain;
+        display: block;
+        filter: grayscale(0);
+    }
+
+    /* CTA */
+
+    .cta {
+        padding: 3rem 0 4rem;
+        background: linear-gradient(135deg, #163E93 0%, #1e4ba8 100%);
+        color: #fff;
+        text-align: center;
+    }
+
+    .cta h2 {
+        font-weight: 400;
+        margin-bottom: 0.5rem;
+    }
+
+    .cta p {
+        margin: 0 auto 1rem;
+        max-width: 60ch;
+    }
+
+    .cta-button {
+        display: inline-block;
+        background: #fff;
+        color: #163E93;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 12px;
+        padding: 0.9rem 1.2rem;
+        text-decoration: none;
+        font-weight: 600;
+        transition: transform 0.15s ease, filter 0.2s ease;
+    }
+
+    .cta-button:hover {
+        filter:brightness(0.95);
+        transform: translateY(-2px);
+    }
+
+    @media (min-width: 768px) {
+        .stats-grid {
+            grid-template-columns: repeat((4, minmax(0,1fr)));
+            gap: 1rem;
+        }
+
+
+        .mission-vision-grid {
+            grid-template-columns:  1fr 1fr;
+            gap: 1.25rem;
+        }
+
+        .values-grid {
+            grid-template-columns: repeat(4,min(0,1fr));
+        }
+
+        .team-features{
+            grid-template-columns: repeat(4,minmax(0,1fr));
+        }
+
+        .logo-track {
+            grid-template-columns: repeat(6,minmax(0,1fr));
+        }
+    }
+    
+</style>
+
+

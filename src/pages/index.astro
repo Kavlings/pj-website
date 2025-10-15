@@ -59,9 +59,14 @@ import Footer from '../components/Footer.astro';
 </section>
 
 <section class="services">
+
     <h2>
         Services.
     </h2>
+
+    <video class="bg-video" autoplay muted loop playsinline poster="/services-backdrop2.webp">
+        <source src="/services.mp4" type="video/mp4">
+        </video>
 
 </section>
     <Footer slot="footer" />
@@ -136,17 +141,31 @@ import Footer from '../components/Footer.astro';
         /* text-align: center; */
         min-height: 50vh;
         width: 100%;
-        background-image: url('/services-backdrop2.webp');
+        /* background-image: url('/services-backdrop2.webp');
         background-size: cover;
         background-position: center;
-        background-repeat: no-repeat;
+        background-repeat: no-repeat; */
         padding: 2rem;
         min-height: 400px;
+        position: relative;
+        overflow: hidden;
     }
     .services h2 {
         margin: 0;
         font-weight: 400;
         color: #fff;
+    }
+
+    .services .bg-video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+        display: block;
+        pointer-events: none;
+        padding: 0;
     }
 
 
@@ -194,7 +213,7 @@ import Footer from '../components/Footer.astro';
     }
 
     .services {
-        margin-top: 5rem;
+        margin-top: 7rem;
         
     }
 
@@ -238,6 +257,20 @@ import Footer from '../components/Footer.astro';
         display: block;
     } 
 
+}
+
+@media (max-width: 768px) {
+    .hero-overlay {
+        padding: 8rem 1.25rem;
+    }
+    .hero-overlay h1 {
+        font-size: 2.25rem;
+        font-weight: 500;
+    }
+    .tag-line p {
+        font-size: 1.1rem;
+        padding: 1.25rem 1rem;
+    }
 }
 
 </style>
