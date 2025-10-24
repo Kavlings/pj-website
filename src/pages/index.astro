@@ -62,15 +62,13 @@ import CTA from "../components/CTA.astro";
 
 <section class="services">
 
-    <h2>
-        Services.
-    </h2>
 
-    <!-- <video class="bg-video" autoplay muted loop playsinline poster="/services-backdrop2.webp">
-        <source src="/services.mp4" type="video/mp4">
-        </video> -->
-        
-        <!-- <img class="bg-video" src="/services-backdrop2.webp" alt="Services background" loading="eager" decoding="async"> -->
+    <a href="/services" style="text-decoration: none; color:inherit">
+        <h2>
+            Services.
+        </h2>
+    </a>
+
         <a href="/services" aria-label="Go to Services" style="display:block">
             <img class="bg-video" src="/images/contact-us.webp" alt="Services background" loading="eager" decoding="async">
         </a>
@@ -167,7 +165,7 @@ import CTA from "../components/CTA.astro";
         text-align: center;
         min-height: 50vh;
         width: 100%;
-        padding: 2rem;
+        /* padding: 2rem; */
         min-height: 400px;
         position: relative;
         overflow: hidden;
@@ -193,6 +191,9 @@ import CTA from "../components/CTA.astro";
         display: block;
         pointer-events: auto;
         padding: 0;
+        max-width: 100%;
+        left: 0;
+        right: 0;
     }
 
 
