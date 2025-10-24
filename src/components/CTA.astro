@@ -1,0 +1,75 @@
+---
+// Optional props if you want to customize the text
+export interface Props {
+    title?: string;
+    subtitle?: string;
+    buttonText?: string;
+    buttonLink?: string;
+}
+
+const { 
+    title = "Ready to grow your next event?",
+    subtitle = "Lets build a plan tailored to your audience and targets.",
+    buttonText = "Talk to Us",
+    buttonLink = "/contact"
+} = Astro.props;
+---
+
+<section class="cta">
+    <h2>{title}</h2>
+    <p>{subtitle}</p>
+    <a class="cta-button" href={buttonLink}>{buttonText}</a>
+</section>
+
+<style>
+    .cta {
+        background-color: #163E93;
+        color: white;
+        text-align: center;
+        padding: 4rem 2rem;
+        margin: 2rem 0;
+    }
+
+    .cta h2 {
+        font-size: 2.5rem;
+        font-weight: 300;
+        margin-bottom: 1rem;
+    }
+
+    .cta p {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+    }
+
+    .cta-button {
+        display: inline-block;
+        background-color: white;
+        color: #163E93;
+        padding: 1rem 2rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1.1rem;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (max-width: 768px) {
+        .cta {
+            padding: 3rem 1rem;
+        }
+        
+        .cta h2 {
+            font-size: 2rem;
+        }
+        
+        .cta p {
+            font-size: 1.1rem;
+        }
+    }
+</style>

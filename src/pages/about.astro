@@ -2,21 +2,25 @@
 import Layout from "../layouts/Layout.astro"
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro"
+import CTA from "../components/CTA.astro";
 ---
 
 <Layout title="About Us - PJ Marketing Solutions">
     <section class="page-hero">
         <Navigation />
         <div class="hero-overlay">
-            <h1>About Us</h1>
-            <p>Where Businesses Turn for Reliable Data</p>
+            <h1>Where Businesses Turn for Reliable Data</h1>
+            <!-- <p>Where Businesses Turn for Reliable Data</p> -->
+            <!-- <p>Whether you need to fill your pipeline with sales-qualified leads, refine your data for smarter targeting, or engage decision-makers before your next major event, we’re here to make it happen.</p> -->
         </div>
     </section>
 
     <section class="about-intro">
         <div class="container">
+            <p>Whether you need to fill your pipeline with sales-qualified leads, refine your data for smarter targeting, or engage decision-makers before your next major event, we’re here to make it happen.</p>
             <h2>Who we are </h2>
-            <p>Founded in 2014 by a team with decades of hands-on exhibition experience, PJ Marketing Solutions was created to help exhibition companies unlock their full potential. Having lived the challenges exhibitors face, we bring data-driven insights and strategies that deliver real results. Today, we’re the trusted partner for businesses turning events into growth opportunities.</p>
+            <p>Founded in 2014 by a team with decades of hands-on exhibition experience, PJ Marketing Solutions was created to help companies to maximize their potential. We deliver B2B data, insights, telemarketing, and sales development results for international organisations.</p>
+            <p>Our results speak for themselves.</p>
         </div>
     </section>
 
@@ -115,11 +119,12 @@ import Footer from "../components/Footer.astro"
         </div>
     </section> -->
 
-    <section class="cta">
+    <!-- <section class="cta">
         <h2>Ready to grow your next event?</h2>
         <p>Let's build a plan tailored to your audience and targets. </p>
         <a href="/contact" class="cta-button">Talk to Us</a>
-    </section>
+    </section> -->
+    <CTA />
     <Footer slot="footer"/>
 </Layout>
 

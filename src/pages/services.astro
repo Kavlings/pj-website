@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro"
+import CTA from "../components/CTA.astro";
 ---
 
 <Layout title="Services - PJ Marketing Solutions">    
@@ -9,7 +10,7 @@ import Footer from "../components/Footer.astro"
         <Navigation />
         <div class="hero-overlay">
             <h1> Services. </h1>
-            <p>Full-funnel event marketing to drive qualified attendance and ROI</p>
+            <p>Delivering B2B Results.</p>
         </div>
 
     </section>
@@ -17,7 +18,7 @@ import Footer from "../components/Footer.astro"
 
     <section class="services-intro">
         <h2> What we do. </h2>
-        <p> We combine precise targeting, data enrichment, and creative execution to help event organizers acquire visitors, retain audience, and enable exhibitor success.
+        <p> With over 11 years of experience, we help sales and marketing teams build stronger pipelines and achieve their revenue and performance goals.
         </p>
     </section>
 
@@ -30,12 +31,10 @@ import Footer from "../components/Footer.astro"
     </div>
 
         <div class="text">
-            <h3>Data Building/Enrichment</h3>
+            <h3>Data Enrichment</h3>
             <p>Turn raw data into actionable insights</p>
-            <ul>
-                <li>Targeted prospect lists built to your specifications</li>
-                <li>Enriched profiles with firmographics, roles, and up-to-date contacts</li>
-                <li>-</li>
+            <p>Our B2B data enrichment services enhance your existing databases with accurate, up-to-date information so your marketing team can better target and convert the right prospects.
+                We turn basic data into valuable, insight-driven assets that fuel growth and offer a cost-effective alternative to buying new lists.</p>
             </ul>
         </div>
             
@@ -50,11 +49,7 @@ import Footer from "../components/Footer.astro"
         <div class="text">
             <h3>Televerification</h3>
             <p>Reliable data you can trust. Validated by real conversations.</p>
-            <ul>
-                <li>Quick verification of contact details and decision-maker information</li>
-                <li>Confirmation of registrations, appointments, or opt-ins</li>
-                <li>Reduced bounce rates and wasted outreach with cleaner data</li>
-            </ul>
+            <p>Our telemarketing services provide both pre-event and post-event support to help you engage the right audience and drive stronger participation. With decades of experience in exhibition marketing, we identify industry trends and target the right prospects to ensure every conversation leads to real results.</p>
         </div>
             
 
@@ -68,15 +63,17 @@ import Footer from "../components/Footer.astro"
         <div class="text">
             <h3>E-mail marketing</h3>
             <p>Compelling campaigns that land, resonate, and covert.</p>
-            <ul>
+            <p>Our email marketing services help you connect with the right audiences through targeted, data-driven campaigns that drive measurable results. We handle everything from segmentation and creative design to delivery and performance tracking, ensuring your message reaches and resonates with the people who matter most.
+                Whether you’re promoting an event or nurturing leads, we make every email count.</p>
+            <!-- <ul>
                 <li>Strategy and copywriting tailored to your audience</li>
                 <li>Responsive templates optimised for all devices</li>
                 <li>Performance tracking with insights to boost engagement</li>
-            </ul>
+            </ul> -->
         </div>
 
     </section> 
-    <section class="service-split">
+    <!-- <section class="service-split">
         <div class="service-image">
             <img src="/images/telephone.png" alt="Exhibitor enablement"/>
     </div>
@@ -89,10 +86,7 @@ import Footer from "../components/Footer.astro"
                 <li>Real-time reporting to refine strategy and measure results</li>
             </ul>
         </div>
-            
-
-
-    </section> 
+    </section>  -->
 
     <section class="service-split">
 
@@ -102,12 +96,9 @@ import Footer from "../components/Footer.astro"
 
         <div class="text">
             <h3> Hosted Buyer </h3>
-            <p> Connecting qualified buyers with the right suppliers—seamlessly.</p>
-            <ul>
-                <li>Pre-qualified buyer matching to maximize ROI at your event.</li>
-                <li>Personalised schedules that align interests and availability</li>
-                <li>Dedicated support ensuring smooth, high-value meetings</li>
-            </ul>
+            <p> Connecting qualified buyers with the right suppliers - seamlessly.</p>
+            <p>Our hosted buyer services are designed to help you connect exhibitors with qualified buyers who are genuinely interested in their products and services. We manage the entire process, from identifying and recruiting high-value buyers to coordinating meetings that lead to meaningful business outcomes.
+                By combining precise targeting with experienced event support, we ensure every hosted buyer programme delivers measurable ROI for organisers and participants alike.</p>
         </div>
             
 
@@ -132,11 +123,7 @@ import Footer from "../components/Footer.astro"
     </section> 
 
 </div>
-        <section class="cta">
-            <h2>Ready to grow your next event?</h2>
-            <p>Lets build a plan tailored to your audience and targets. </p>
-            <a class="cta-button" href="/contact"> Talk to Us </a>
-        </section>
+<CTA />
 
     <Footer slot="footer" />
 
