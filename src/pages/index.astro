@@ -64,10 +64,14 @@ import Footer from '../components/Footer.astro';
         Services.
     </h2>
 
-    <video class="bg-video" autoplay muted loop playsinline poster="/services-backdrop2.webp">
+    <!-- <video class="bg-video" autoplay muted loop playsinline poster="/services-backdrop2.webp">
         <source src="/services.mp4" type="video/mp4">
-        </video>
-
+        </video> -->
+        
+        <!-- <img class="bg-video" src="/services-backdrop2.webp" alt="Services background" loading="eager" decoding="async"> -->
+        <a href="/services" aria-label="Go to Services" style="display:block">
+            <img class="bg-video" src="/services-backdrop2.webp" alt="Services background" loading="eager" decoding="async">
+        </a>
 </section>
     <Footer slot="footer" />
 </Layout>
@@ -154,6 +158,8 @@ import Footer from '../components/Footer.astro';
         margin: 0;
         font-weight: 400;
         color: #fff;
+        z-index: 2;
+        position: relative;
     }
 
     .services .bg-video {
@@ -162,9 +168,9 @@ import Footer from '../components/Footer.astro';
         width: 100%;
         height: 100%;
         object-fit: cover;
-        z-index: -1;
+        z-index: 0;
         display: block;
-        pointer-events: none;
+        pointer-events: auto;
         padding: 0;
     }
 
