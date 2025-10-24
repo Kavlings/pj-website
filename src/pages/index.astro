@@ -18,6 +18,7 @@ import CTA from "../components/CTA.astro";
             Precise Reach. <br>
             Real Growth.
         </h1>
+        <a href="/contact" class="hero-cta-button">Talk to Us</a>
 
     </div>
 
@@ -71,7 +72,7 @@ import CTA from "../components/CTA.astro";
         
         <!-- <img class="bg-video" src="/services-backdrop2.webp" alt="Services background" loading="eager" decoding="async"> -->
         <a href="/services" aria-label="Go to Services" style="display:block">
-            <img class="bg-video" src="/services-backdrop2.webp" alt="Services background" loading="eager" decoding="async">
+            <img class="bg-video" src="/images/contact-us.webp" alt="Services background" loading="eager" decoding="async">
         </a>
 </section>
 <CTA />
@@ -138,26 +139,44 @@ import CTA from "../components/CTA.astro";
         font-size: 25px;
         font-weight: 500;
     }
+    .hero-cta-button {
+        display: inline-block;
+        background-color: transparent;
+        color: white;
+        border: 2px solid white;
+        padding: 1rem 2rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1.1rem;
+        transition: all 0.2s ease;
+        margin-top: 1rem;
+    }
+
+    .hero-cta-button:hover {
+        background-color: white;
+        color: #163E93;
+        transform: translateY(-2px);
+    }
 
     .services {
         margin-top: 5rem;
         margin-bottom: 5rem;
         justify-content: center;
         align-items: center;
-        /* text-align: center; */
+        text-align: center;
         min-height: 50vh;
         width: 100%;
-        /* background-image: url('/services-backdrop2.webp');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat; */
         padding: 2rem;
         min-height: 400px;
         position: relative;
         overflow: hidden;
+        display: flex;
+        flex-direction: column;
     }
     .services h2 {
         margin: 0;
+        font-size: 2.5rem;
         font-weight: 400;
         color: #fff;
         z-index: 2;
@@ -225,6 +244,10 @@ import CTA from "../components/CTA.astro";
         
     }
 
+
+
+
+
 /* Tablets and up */
 @media (min-width: 768px) {
     .logo-track {
@@ -250,6 +273,7 @@ import CTA from "../components/CTA.astro";
         padding: 2rem 10rem;
         font-size: 50px;
         font-weight: 500;
+        text-align: center;
     }
     .logo-track {
         grid-template-columns: repeat(6, minmax(0,fr));
