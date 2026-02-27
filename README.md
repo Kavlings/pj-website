@@ -23,6 +23,6 @@ This project consists of two main components:
 - **Components**: Modular Astro components for maintainability
 - **Deployment**: Static site generation
 
-### Backend ([pj-backend/]
+### Backend
 - **Framework**: FastAPI with Python
 - **Email Service**: SMTP integration via Zoho Mail
