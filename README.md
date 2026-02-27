@@ -17,12 +17,12 @@ A modern, data-driven marketing website designed to help businesses achieve meas
 
 This project consists of two main components:
 
-### Frontend ([pj/](cci:9://file:///Users/kaweesha/Documents/projects/pj-website/pj:0:0-0:0))
+### Frontend 
 - **Framework**: Astro 5.13.7
 - **Styling**: Vanilla CSS with responsive design
 - **Components**: Modular Astro components for maintainability
 - **Deployment**: Static site generation
 
-### Backend ([pj-backend/](cci:9://file:///Users/kaweesha/Documents/projects/pj-website/pj-backend:0:0-0:0))
+### Backend ([pj-backend/]
 - **Framework**: FastAPI with Python
 - **Email Service**: SMTP integration via Zoho Mail
