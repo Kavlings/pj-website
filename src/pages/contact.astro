@@ -130,7 +130,7 @@ import Footer from "../components/Footer.astro"
                 btn.textContent = 'Sent';
                 showToast(msg, { ok: true, message: extractError(out)});
             } else {
-                showToast(msg, {ok: true, message: out.message });
+                showToast(msg, {ok: false, message: extractError(out) });
             }
         } catch {
             showToast(msg, {ok: false, message: 'Network error. Please try again.'});
