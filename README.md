@@ -2,10 +2,10 @@
 
 A modern, data-driven marketing website designed to help businesses achieve measurable growth through exhibition and event marketing strategies.
 
-## 🌐 Live Demo
+##  Live Demo
 [https://pjmarketing.ae](https://pjmarketing.ae)
 
-## ✨ Features
+##  Features
 
 - **Responsive Design**: Built with Astro for optimal performance across all devices
 - **Dynamic Hero Section**: Engaging video background with compelling call-to-action
@@ -13,7 +13,7 @@ A modern, data-driven marketing website designed to help businesses achieve meas
 - **Client Showcase**: Display of trusted partnerships and successful projects
 - **Modern UI/UX**: Clean, professional design focused on conversion
 
-## 🏗️ Architecture
+##  Architecture
 
 This project consists of two main components:
 
