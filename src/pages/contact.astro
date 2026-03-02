@@ -39,7 +39,7 @@ import Footer from "../components/Footer.astro"
                 <form class="contact-form" id="contactForm">
                     <div class="form-group">
                         <label for="name">Your Name</label>
-                        <input type="text" id="name" name="name" minlength="2">
+                        <input type="text" id="name" name="name" required minlength="2">
                     </div>
 
                     <div class="form-group">
@@ -58,8 +58,10 @@ import Footer from "../components/Footer.astro"
                         <textarea name="message" id="message" rows="5" required minlength="10" ></textarea>
                     </div>
 
+                    <div class="cf-turnstile" data-sitekey="0x4AAAAAAClItFk9h5HzE2Wg"></div>
+
                     <button type="submit" class="submit-btn"> Send Message</button>
-                </form> 
+                </form>
             </div>
         </div>
 
@@ -105,6 +107,12 @@ import Footer from "../components/Footer.astro"
         if (!btn || !msg) return;
 
         const data = Object.fromEntries(new FormData(form));
+        const turnstileToken = (form.querySelector('[name="cf-turnstile-response"]') as HTMLInputElement)?.value;
+        if (!turnstileToken) {
+            showToast(msg, { ok: false, message: 'Please complete the security check.' });
+            btn.disabled = false; btn.textContent = 'Send Message';
+            return;
+        }
 
         btn.disabled = true; btn.textContent = 'Sending...'; 
         msg.style.display = 'none'; 
