@@ -1,0 +1,70 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="Page Not Found - PJ Marketing Solutions" description="The page you're looking for doesn't exist.">
+    <section class="hero">
+        <Navigation />
+        <div class="hero-overlay">
+            <h1>404</h1>
+            <p>This page doesn't exist.</p>
+            <a href="/" class="home-btn">Go Home</a>
+        </div>
+    </section>
+    <Footer slot="footer" />
+</Layout>
+
+<style>
+    .hero {
+        position: relative;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #163E93 0%, #1e4ba8 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+    }
+
+    .hero-overlay {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .hero-overlay h1 {
+        font-size: 6rem;
+        font-weight: 300;
+        margin: 0;
+        line-height: 1;
+    }
+
+    .hero-overlay p {
+        font-size: 1.25rem;
+        opacity: 0.85;
+        margin: 0;
+    }
+
+    .home-btn {
+        display: inline-block;
+        margin-top: 0.5rem;
+        background: white;
+        color: #163E93;
+        padding: 0.875rem 2rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1rem;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .home-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+</style>
