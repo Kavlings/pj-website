@@ -38,6 +38,45 @@ const ogImageURL = new URL(ogImage, 'https://pjmarketing.ae');
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
         <link rel="icon" href="/favicon.jpg" type="image/jpeg">
         <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+        <!-- JSON-LD Structured Data -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "PJ Marketing Solutions",
+            "legalName": "PJ Marketing Solutions FZ LLE",
+            "url": "https://pjmarketing.ae",
+            "logo": "https://pjmarketing.ae/logos/minimal-pj-logo.jpg",
+            "foundingDate": "2014",
+            "description": "B2B exhibition and event marketing agency based in Dubai, UAE. Specialists in data enrichment, televerification, email marketing, hosted buyer programmes, and on-site registration.",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Dubai",
+                "addressCountry": "AE"
+            },
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "email": "info@pjmarketing.ae",
+                "contactType": "customer service"
+            },
+            "sameAs": [
+                "https://www.linkedin.com/company/pj-marketing-solutions-fz-lle/"
+            ],
+            "areaServed": "Middle East",
+            "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Exhibition Marketing Services",
+                "itemListElement": [
+                    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Data Enrichment"}},
+                    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Televerification"}},
+                    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Email Marketing"}},
+                    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Hosted Buyer Programme"}},
+                    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "On-site Registration"}}
+                ]
+            }
+        }
+        </script>
     </head>
     <body>
 
