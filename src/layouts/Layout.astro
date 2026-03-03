@@ -93,29 +93,52 @@ const ogImageURL = new URL(ogImage, 'https://pjmarketing.ae');
 
 
 <style>
+    :root {
+        /* Colors */
+        --color-primary: #163E93;
+        --color-primary-hover: #1e4ba8;
+        --color-dark: #051C2A;
+        --color-bg: #f8f9fa;
+        --color-bg-card: #f3f6fc;
+        --color-text: #333;
+        --color-text-muted: #444;
+        --color-text-light: #666;
+
+        /* Spacing scale */
+        --space-xs: 0.5rem;
+        --space-sm: 1rem;
+        --space-md: 1.5rem;
+        --space-lg: 2rem;
+        --space-xl: 3rem;
+        --space-2xl: 4rem;
+
+        /* Section defaults */
+        --section-x: 2rem;
+        --section-y: 4rem;
+
+        /* Border radius */
+        --radius-sm: 4px;
+        --radius-md: 8px;
+        --radius-lg: 12px;
+        --radius-xl: 16px;
+    }
+
     /* Reset and base styles */
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
     }
-    
-    .inter {
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    }
-    
+
     body {
         font-family: "Inter", sans-serif;
         font-weight: 200;
         font-optical-sizing: auto;
         font-style: normal;
         line-height: 1.6;
-        color: #333;
+        color: var(--color-text);
     }
-    
+
     .page-container {
         min-height: 100vh;
         display: flex;
@@ -131,13 +154,9 @@ const ogImageURL = new URL(ogImage, 'https://pjmarketing.ae');
     }
 
     @media (min-width: 768px) {
-        /* Global Typography */
-        h1 { font-size: 4rem;}
-        h2 { font-size: 2.5rem;}
-        p { font-size: 1.5rem;}
-
-        /* Global spacing */
-        section { padding: 3rem 2rem;}
-        
+        h1 { font-size: 4rem; }
+        h2 { font-size: 2.5rem; }
+        p  { font-size: 1.5rem; }
+        section { padding: var(--space-xl) var(--section-x); }
     }
 </style>
