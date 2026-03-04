@@ -88,6 +88,20 @@ const ogImageURL = new URL(ogImage, 'https://pjmarketing.ae');
                 <slot name="footer" />
             </footer>
         </div>
+
+        <script>
+            document.documentElement.classList.add('js-animate');
+            const io = new IntersectionObserver(
+                entries => entries.forEach(e => {
+                    if (e.isIntersecting) {
+                        e.target.classList.add('in-view');
+                        io.unobserve(e.target);
+                    }
+                }),
+                { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+            );
+            document.querySelectorAll('[data-animate]').forEach(el => io.observe(el));
+        </script>
     </body>
 </html>
 
@@ -158,5 +172,19 @@ const ogImageURL = new URL(ogImage, 'https://pjmarketing.ae');
         h2 { font-size: 2.5rem; }
         p  { font-size: 1.5rem; }
         section { padding: var(--space-xl) var(--section-x); }
+    }
+</style>
+
+<style is:global>
+    /* Scroll reveal — only active when JS has loaded */
+    html.js-animate [data-animate] {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+        transition-delay: var(--animate-delay, 0s);
+    }
+    html.js-animate [data-animate].in-view {
+        opacity: 1;
+        transform: translateY(0);
     }
 </style>
