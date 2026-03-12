@@ -19,7 +19,7 @@ import CTA from "../components/CTA.astro";
             Real Growth.
         </h1>
         
-        <a href="/contact" class="hero-cta-button">Talk to Us</a>
+        <a href="/contact" class="hero-cta-button">Talk to Us &rarr;</a>
 
     </div>
 
@@ -98,7 +98,9 @@ import CTA from "../components/CTA.astro";
         content: "";
         position: absolute;
         inset: 0;
-        background: rgba(0, 0, 0, 0.35);
+        background:
+            linear-gradient(to bottom, transparent 88%, rgba(255,255,255,0.04) 90%, rgba(255,255,255,0.1) 92%, rgba(255,255,255,0.2) 94%, rgba(255,255,255,0.35) 95.5%, rgba(255,255,255,0.52) 97%, rgba(255,255,255,0.7) 98%, rgba(255,255,255,0.86) 99%, #ffffff 100%),
+            rgba(0, 0, 0, 0.35);
     }
 
     .hero-overlay {
